@@ -1,15 +1,35 @@
-let todotext = document.getElementById("todotext");
-let preview = document.getElementById("preview")
-let addbtn = document.getElementById("addbtn")
-let todolist = document.getElementById("todolist")
+const todoForm = document.querySelector(".form-todo");
+const todoInput = document.querySelector(".form-todo input[type='text']");
+const todoList = document.querySelector(".todo-list");
 
 
-todotext.addEventListener("input", function(){
-    console.log(this.value)
-})
+todoForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const newTodoText = todoInput.value;
+    const newLi = document.createElement("li");
+    const newLiInnerHtml = 
+    `<span class="text ">${newTodoText}</span>
+    <div class="todo-buttons">
+        <button class="todo-btn done">Done</button>
+        <button class="todo-btn remove">Remove</button>
+    </div>`
+    newLi.innerHTML= newLiInnerHtml;
+    todoList.append(newLi);
+    todoInput.value = "";
+    newLi.style.backgroundColor = random();
+});
 
-todotext.addEventListener("input", function(){
-    preview.innerHTML= (this.value)
+todoList.addEventListener("click", (e)=>{
+    console.log(e.target);
+    if(e.target.classList.contains("remove")){
+        const targetedLi = e.target.parentNode.parentNode;
+        targetedLi.remove();
+    };
+    if(e.target.classList.contains("done")){
+        const liSpan = e.target.parentNode.previousElementSibling;
+        liSpan.style.textDecoration = "line-through";
+    };
+
 });
 
 function random(){
@@ -21,19 +41,5 @@ function random(){
     console.log(bgcolor);
     return bgcolor;
 }
-random();
-addbtn.addEventListener("click",function(e){
-    e.preventDefault();
-    const newTodoText  = todotext.value;
-    const newLi = document.createElement('li');
-    const newLiInnerHtml =  `<div  class="d-flex border mb-2  bg-gradient bg-opacity-75" style="justify-content: space-between; background-color: ${random()}" >
-    <span class="text text-white">${newTodoText}</span>
-    <div class="todo-buttons">
-        <button class="todo-btn done">Done</button>
-        <button class="todo-btn remove">Remove</button>
-    </div>
-    </div>`
-    newLi.innerHTML = newLiInnerHtml;
-    todolist.append(newLi);
-    todotext.value = ''
-})
+
+

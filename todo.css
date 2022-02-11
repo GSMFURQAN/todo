@@ -1,0 +1,109 @@
+*{
+    box-sizing : border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    min-height : 70vh;
+    background: wheat;
+    position: relative;
+}
+a {
+    text-decoration: none;
+}
+.container{
+    max-width :1200px;
+    margin: auto;
+    width:90%;
+}
+.nav {
+    min-height: 8vh;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-items{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.headline{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.btn{
+    display: inline;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+.btn-head {
+    padding:1rem 2rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    
+}
+
+.todo-section{
+    margin-top: 5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form-todo{
+    min-height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.form-todo input{
+    margin-top: 1.5rem;
+min-height: 100%;
+}
+
+.form-todo input[type="text"]{
+    width: 78%;
+    padding-left: 1rem;
+}
+
+.form-todo input[type="submit"]{
+    width: 20%;
+    background: darkgoldenrod;
+    font-size: 1.2rem;
+}
+
+.todo-list{
+    text-align: left;
+    font-size: 1.2rem;
+    list-style-type: none;
+}
+
+.todo-list li{
+    padding: 1rem;
+    /* background: gray; */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.todo-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 1rem;
+    cursor: pointer;
+
+}
