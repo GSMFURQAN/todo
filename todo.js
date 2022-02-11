@@ -4,7 +4,7 @@ const todoList = document.querySelector(".todo-list");
 
 
 todoForm.addEventListener("submit", (e)=>{
-    e.preventDefault();
+    // e.preventDefault();
     const newTodoText = todoInput.value;
     const newLi = document.createElement("li");
     const newLiInnerHtml = 
